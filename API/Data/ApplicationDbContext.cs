@@ -16,9 +16,9 @@ public partial class ApplicationDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Author> Authors { get; set; }
-
     public virtual DbSet<Book> Books { get; set; }
+
+    public virtual DbSet<BookCopy> BookCopies { get; set; }
 
     public virtual DbSet<Category> Categories { get; set; }
 
@@ -32,47 +32,24 @@ public partial class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Author>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("authors_pkey");
-
-            entity.ToTable("authors");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Bio).HasColumnName("bio");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("created_at");
-            entity.Property(e => e.IsActive)
-                .HasDefaultValue(true)
-                .HasColumnName("is_active");
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .HasColumnName("name");
-            entity.Property(e => e.UpdatedAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("updated_at");
-        });
-
         modelBuilder.Entity<Book>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("books_pkey");
 
             entity.ToTable("books");
 
-            entity.HasIndex(e => e.Isbn, "books_isbn_key").IsUnique();
-
             entity.HasIndex(e => e.Title, "idx_books_title");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.AuthorId).HasColumnName("author_id");
+            entity.Property(e => e.AuthorName)
+                .HasMaxLength(100)
+                .HasColumnName("author_name");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("created_at");
+            entity.Property(e => e.CreatedBy).HasColumnName("created_by");
             entity.Property(e => e.IsActive)
                 .HasDefaultValue(true)
                 .HasColumnName("is_active");
@@ -88,13 +65,42 @@ public partial class ApplicationDbContext : DbContext
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("updated_at");
 
-            entity.HasOne(d => d.Author).WithMany(p => p.Books)
-                .HasForeignKey(d => d.AuthorId)
-                .HasConstraintName("books_author_id_fkey");
-
             entity.HasOne(d => d.Category).WithMany(p => p.Books)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("books_category_id_fkey");
+
+            entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.Books)
+                .HasForeignKey(d => d.CreatedBy)
+                .HasConstraintName("books_created_by_fkey");
+        });
+
+        modelBuilder.Entity<BookCopy>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("book_copies_pkey");
+
+            entity.ToTable("book_copies");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.CopyNumber).HasColumnName("copy_number");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("created_at");
+            entity.Property(e => e.IsActive)
+                .HasDefaultValue(true)
+                .HasColumnName("is_active");
+            entity.Property(e => e.IsAvailable)
+                .HasDefaultValue(true)
+                .HasColumnName("is_available");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("updated_at");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.BookCopies)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("book_copies_book_id_fkey");
         });
 
         modelBuilder.Entity<Category>(entity =>
@@ -129,12 +135,12 @@ public partial class ApplicationDbContext : DbContext
 
             entity.ToTable("loans");
 
-            entity.HasIndex(e => e.BookId, "idx_loans_book_id");
+            entity.HasIndex(e => e.BookCopyId, "idx_loans_book_copy_id");
 
             entity.HasIndex(e => e.UserId, "idx_loans_user_id");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.BookId).HasColumnName("book_id");
+            entity.Property(e => e.BookCopyId).HasColumnName("book_copy_id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
@@ -150,9 +156,9 @@ public partial class ApplicationDbContext : DbContext
                 .HasColumnName("updated_at");
             entity.Property(e => e.UserId).HasColumnName("user_id");
 
-            entity.HasOne(d => d.Book).WithMany(p => p.Loans)
-                .HasForeignKey(d => d.BookId)
-                .HasConstraintName("loans_book_id_fkey");
+            entity.HasOne(d => d.BookCopy).WithMany(p => p.Loans)
+                .HasForeignKey(d => d.BookCopyId)
+                .HasConstraintName("loans_book_copy_id_fkey");
 
             entity.HasOne(d => d.User).WithMany(p => p.Loans)
                 .HasForeignKey(d => d.UserId)

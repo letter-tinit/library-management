@@ -9,13 +9,15 @@ public partial class Book
 
     public string Title { get; set; } = null!;
 
-    public int? AuthorId { get; set; }
+    public string AuthorName { get; set; } = null!;
 
     public int? CategoryId { get; set; }
 
-    public DateOnly? PublishedDate { get; set; }
+    public DateOnly PublishedDate { get; set; }
 
-    public string? Isbn { get; set; }
+    public string Isbn { get; set; } = null!;
+
+    public int? CreatedBy { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -23,9 +25,9 @@ public partial class Book
 
     public bool IsActive { get; set; }
 
-    public virtual Author? Author { get; set; }
+    public virtual ICollection<BookCopy> BookCopies { get; set; } = new List<BookCopy>();
 
     public virtual Category? Category { get; set; }
 
-    public virtual ICollection<Loan> Loans { get; set; } = new List<Loan>();
+    public virtual User? CreatedByNavigation { get; set; }
 }

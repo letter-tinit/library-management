@@ -7,7 +7,7 @@ using API.DTOs.AuthenDTOs;
 using API.Models;
 using Microsoft.AspNetCore.Identity.Data;
 
-namespace API.Interfaces
+namespace API.IServices
 {
     public interface IAuthenService
     {

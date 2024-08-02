@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.DTOs.AuthenDTOs;
-using API.Interfaces;
+using API.IServices;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 

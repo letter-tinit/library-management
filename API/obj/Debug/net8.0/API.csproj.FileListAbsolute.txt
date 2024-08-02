@@ -1,3 +1,11 @@
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.sourcelink.json
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\appsettings.json
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\API.exe
@@ -5,6 +13,8 @@ C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\API.deps.json
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\API.runtimeconfig.json
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\API.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\API.pdb
+C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -19,6 +29,8 @@ C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.R
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -80,13 +92,6 @@ C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Works
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.AssemblyInfo.cs
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -101,5 +106,3 @@ C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.pdb
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\Letter\Desktop\API\API\obj\Debug\net8.0\ref\API.dll
-C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Npgsql.dll
-C:\Users\Letter\Desktop\API\API\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

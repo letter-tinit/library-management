@@ -3,17 +3,15 @@ using System.Collections.Generic;
 
 namespace API.Models;
 
-public partial class User
+public partial class BookCopy
 {
     public int Id { get; set; }
 
-    public string Username { get; set; } = null!;
+    public int? BookId { get; set; }
 
-    public string Password { get; set; } = null!;
+    public int CopyNumber { get; set; }
 
-    public string Email { get; set; } = null!;
-
-    public string Role { get; set; } = null!;
+    public bool IsAvailable { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -21,7 +19,7 @@ public partial class User
 
     public bool IsActive { get; set; }
 
-    public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+    public virtual Book? Book { get; set; }
 
     public virtual ICollection<Loan> Loans { get; set; } = new List<Loan>();
 }

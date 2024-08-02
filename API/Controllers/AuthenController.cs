@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Threading.Tasks;
 using API.DTOs.AuthenDTOs;
-using API.Interfaces;
+using API.IServices;
 using API.Mapper;
 using Microsoft.AspNetCore.Mvc;
 

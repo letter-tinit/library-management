@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj": {}
+    "C:\\Users\\Letter\\Desktop\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj": {
+    "C:\\Users\\Letter\\Desktop\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Letter\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Letter\\Desktop\\API\\API\\obj\\",
+        "outputPath": "C:\\Users\\Letter\\Desktop\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Letter\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.7, )"
