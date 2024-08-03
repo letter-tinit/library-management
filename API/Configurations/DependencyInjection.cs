@@ -20,9 +20,11 @@ namespace API.Configurations
 
         public static IServiceCollection AddScoped(this IServiceCollection services)
         {
+            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IAuthenService, AuthenService>();
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<ILoanService, LoanService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             return services;
         }
 

@@ -44,24 +44,24 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost("/register")]
-        public async Task<IActionResult> Register([FromBody] RegisterModel registerModel)
-        {
-            var newUser = registerModel.ToUserFromRegisterRequestDTO();
+        // [HttpPost("/register")]
+        // public async Task<IActionResult> Register([FromBody] RegisterModel registerModel)
+        // {
+        //     var newUser = registerModel.ToUserFromRegisterRequestDTO();
 
-            try
-            {
-                await _services.RegisterAsync(newUser);
-                return Ok("User registered successfully");
-            }
-            catch (DuplicateNameException ex)
-            {
-                return Unauthorized("Error: " + ex.Message);
-            }
-            catch (Exception exception)
-            {
-                return BadRequest("Error: " + exception.Message);
-            }
-        }
+        //     try
+        //     {
+        //         await _services.RegisterAsync(newUser);
+        //         return Ok("User registered successfully");
+        //     }
+        //     catch (DuplicateNameException ex)
+        //     {
+        //         return Unauthorized("Error: " + ex.Message);
+        //     }
+        //     catch (Exception exception)
+        //     {
+        //         return BadRequest("Error: " + exception.Message);
+        //     }
+        // }
     }
 }

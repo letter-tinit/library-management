@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
+using API.DTOs.AccountDTO;
 using API.DTOs.AuthenDTOs;
 using API.DTOs.BookDTOs;
 using API.DTOs.Loan;
@@ -29,12 +30,15 @@ namespace API.Mapper
 
         public static BookDTO ToBookDto(this Book book, int numberOfCopy, int numberOfAvailableCopy)
         {
+
+            string categoryName = (book.Category != null && book.Category.IsActive) ? book.Category.Name : "Unknown";
+
             return new BookDTO
             {
                 Id = book.Id,
                 Title = book.Title,
                 AuthorName = book.AuthorName,
-                CategoryName = book.Category.Name,
+                CategoryName = categoryName,
                 IsActive = book.IsActive,
                 NumberOfCopy = numberOfCopy,
                 NumberOfAvailableCopy = numberOfAvailableCopy
@@ -43,12 +47,14 @@ namespace API.Mapper
 
         public static BookDetailsDTO ToBookDetailsDTO(this Book book, int numberOfCopy, int numberOfAvailableCopy)
         {
+            string categoryName = (book.Category != null && book.Category.IsActive) ? book.Category.Name : "Unknown";
+
             return new BookDetailsDTO
             {
                 Id = book.Id,
                 Title = book.Title,
                 AuthorName = book.AuthorName,
-                CategoryName = book.Category.Name,
+                CategoryName = categoryName,
                 CategoryId = book.CategoryId,
                 PublishedDate = book.PublishedDate,
                 Isbn = book.Isbn,
@@ -82,6 +88,20 @@ namespace API.Mapper
                 UserId = loanDTO.UserId,
                 LoanDate = DateOnly.FromDateTime(DateTime.Now),
                 ReturnDate = DateOnly.FromDateTime(DateTime.Now.AddDays(7)),
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                IsActive = true
+            };
+        }
+
+        public static User ToUserFromCreateUserDTO(this CreateUserDTO createUserDTO)
+        {
+            return new User
+            {
+                Username = createUserDTO.Username,
+                Password = createUserDTO.Password,
+                Email = createUserDTO.Email,
+                Role = "user",
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now,
                 IsActive = true

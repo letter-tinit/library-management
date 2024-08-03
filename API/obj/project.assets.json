@@ -2887,27 +2887,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Letter\\.nuget\\packages\\": {}
+    "/home/letter/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
+      "projectUniqueName": "/home/letter/Documents/API/API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\Letter\\Desktop\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Letter\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Letter\\Desktop\\API\\API\\obj\\",
+      "projectPath": "/home/letter/Documents/API/API.csproj",
+      "packagesPath": "/home/letter/.nuget/packages/",
+      "outputPath": "/home/letter/Documents/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Letter\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/letter/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2920,11 +2917,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2979,7 +2971,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

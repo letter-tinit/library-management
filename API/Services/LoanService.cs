@@ -13,7 +13,6 @@ namespace API.Services
 {
     public class LoanService(ApplicationDbContext context) : ILoanService
     {
-
         private readonly ApplicationDbContext _context = context;
 
         public async Task<Loan> LoanBookAsync(LoanDTO loanDTO)
